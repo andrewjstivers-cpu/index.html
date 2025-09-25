@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Stivers - Technology Investment Banking </title>
+    <title>Andrew Stivers - Technology Investment Banking Director</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -603,6 +603,241 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Animated Background Elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.1), rgba(16, 185, 129, 0.05));
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .floating-shape.shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape.shape-2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -7s;
+        }
+
+        .floating-shape.shape-3 {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: -14s;
+        }
+
+        .floating-shape.shape-4 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            right: 30%;
+            animation-delay: -3s;
+        }
+
+        .floating-shape.shape-5 {
+            width: 140px;
+            height: 140px;
+            top: 10%;
+            right: 40%;
+            animation-delay: -10s;
+        }
+
+        .floating-dots {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(5, 150, 105, 0.3);
+            border-radius: 50%;
+            animation: floatDots 15s infinite linear;
+        }
+
+        .floating-dots.dot-1 {
+            top: 25%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .floating-dots.dot-2 {
+            top: 70%;
+            left: 60%;
+            animation-delay: -5s;
+        }
+
+        .floating-dots.dot-3 {
+            top: 50%;
+            right: 20%;
+            animation-delay: -10s;
+        }
+
+        .floating-dots.dot-4 {
+            top: 90%;
+            left: 40%;
+            animation-delay: -2s;
+        }
+
+        .geometric-lines {
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(5, 150, 105, 0.2), transparent);
+            animation: moveLine 25s infinite ease-in-out;
+        }
+
+        .geometric-lines.line-1 {
+            top: 30%;
+            left: -200px;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+
+        .geometric-lines.line-2 {
+            top: 70%;
+            right: -200px;
+            transform: rotate(-15deg);
+            animation-delay: -8s;
+        }
+
+        .geometric-lines.line-3 {
+            top: 50%;
+            left: -200px;
+            transform: rotate(45deg);
+            animation-delay: -16s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.4;
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px) rotate(90deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) translateX(-15px) rotate(180deg);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-40px) translateX(10px) rotate(270deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes floatDots {
+            0% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes moveLine {
+            0% {
+                transform: translateX(0) rotate(15deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(100vw) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        /* Dark section animated elements */
+        .stats .animated-bg .floating-shape,
+        .contact .animated-bg .floating-shape {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(52, 211, 153, 0.08));
+        }
+
+        .stats .animated-bg .floating-dots,
+        .contact .animated-bg .floating-dots {
+            background: rgba(16, 185, 129, 0.4);
+        }
+
+        .stats .animated-bg .geometric-lines,
+        .contact .animated-bg .geometric-lines {
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+        }
+
+        /* Particle system for hero */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(5, 150, 105, 0.5);
+            border-radius: 50%;
+            animation: particle 12s infinite ease-in-out;
+        }
+
+        @keyframes particle {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile optimizations for animations */
+        @media (max-width: 768px) {
+            .animated-bg {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animated-bg,
+            .floating-shape,
+            .floating-dots,
+            .geometric-lines,
+            .particle {
+                animation: none;
+                opacity: 0.1;
+            }
+        }
     </style>
 </head>
 <body>
@@ -619,10 +854,24 @@
     </header>
 
     <section id="home" class="hero">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+            <div class="floating-dots dot-1"></div>
+            <div class="floating-dots dot-2"></div>
+            <div class="floating-dots dot-3"></div>
+            <div class="floating-dots dot-4"></div>
+            <div class="geometric-lines line-1"></div>
+            <div class="geometric-lines line-2"></div>
+            <div class="geometric-lines line-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-badge">M&A Negotiation Expertise</div>
+                    <div class="hero-badge">Director • Peak Technology Partners</div>
                     <h1>Delivering Strategic Excellence</h1>
                     <div class="hero-subtitle">Technology Investment Banking & Board Leadership</div>
                     <p class="hero-description">
@@ -642,6 +891,14 @@
     </section>
 
     <section class="stats">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-dots dot-1"></div>
+            <div class="floating-dots dot-2"></div>
+            <div class="geometric-lines line-1"></div>
+        </div>
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item fade-in">
@@ -839,6 +1096,14 @@
     </section>
 
     <section id="contact" class="section contact">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-dots dot-1"></div>
+            <div class="floating-dots dot-3"></div>
+            <div class="geometric-lines line-2"></div>
+        </div>
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Connect</div>
@@ -965,4 +1230,3 @@
     </script>
 </body>
 </html>
-
