@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew Stivers - Technology Executive & Board Member</title>
+    <title>Andrew Stivers - Technology Investment Banking Director</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,319 +13,777 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #fff;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 32px;
+            position: relative;
+            z-index: 10;
         }
 
         /* Header */
         header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
             font-weight: 700;
-            color: #2c5aa0;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 48px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #4a4a4a;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
         }
 
         .nav-links a:hover {
-            color: #2c5aa0;
+            color: #059669;
+            transform: translateY(-1px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #059669, #10b981);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 100%);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+            padding: 120px 0 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 1px solid #a7f3d0;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 24px;
+            letter-spacing: 0.02em;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            font-size: 64px;
+            font-weight: 900;
+            color: #1a1a1a;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 24px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
         }
 
         .hero-description {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.9;
+            font-size: 20px;
+            font-weight: 400;
+            color: #4a5568;
             line-height: 1.7;
+            margin-bottom: 40px;
         }
 
-        .cta-button {
-            background: #fff;
-            color: #2c5aa0;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 16px 32px;
+            font-size: 16px;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(5, 150, 105, 0.3);
         }
 
-        .cta-button:hover {
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.4);
+            background: linear-gradient(135deg, #047857, #059669);
+        }
+
+        .btn-secondary {
+            color: #4a5568;
+            padding: 16px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            border-color: #059669;
+            color: #059669;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+        }
+
+        .hero-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            color: #64748b;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Animated Background Elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Simplified animations for better performance */
+        @media (prefers-reduced-motion: no-preference) {
+            .floating-shape {
+                position: absolute;
+                background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08));
+                animation: float 20s infinite ease-in-out;
+                will-change: transform, opacity;
+                clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            }
+
+            .floating-shape.shape-1 {
+                width: 80px;
+                height: 80px;
+                top: 20%;
+                left: 10%;
+                animation-delay: 0s;
+                clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+            }
+
+            .floating-shape.shape-2 {
+                width: 120px;
+                height: 120px;
+                top: 60%;
+                right: 15%;
+                animation-delay: -7s;
+                clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+            }
+
+            .floating-shape.shape-3 {
+                width: 60px;
+                height: 60px;
+                top: 80%;
+                left: 20%;
+                animation-delay: -14s;
+                clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+            }
+
+            @keyframes float {
+                0%, 100% {
+                    transform: translate3d(0px, 0px, 0) rotate(0deg);
+                    opacity: 0.4;
+                }
+                25% {
+                    transform: translate3d(20px, -30px, 0) rotate(90deg);
+                    opacity: 0.8;
+                }
+                50% {
+                    transform: translate3d(-15px, -10px, 0) rotate(180deg);
+                    opacity: 0.3;
+                }
+                75% {
+                    transform: translate3d(10px, -40px, 0) rotate(270deg);
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        /* Completely disable animations for reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .animated-bg,
+            .floating-shape,
+            .floating-dots,
+            .geometric-lines,
+            .particle {
+                animation: none !important;
+                transition: none !important;
+                opacity: 0 !important;
+                display: none !important;
+            }
+            
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
 
         /* Stats Section */
         .stats {
-            background: #f8f9fa;
-            padding: 80px 0;
+            padding: 100px 0;
+            background: #1a1a1a;
+            color: white;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #059669, transparent);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 64px;
             text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+            padding: 32px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            background: rgba(5, 150, 105, 0.1);
+            border-color: rgba(5, 150, 105, 0.3);
         }
 
         .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #2c5aa0;
-            margin-bottom: 1rem;
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
 
         .stat-item p {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 18px;
+            color: #cbd5e1;
             font-weight: 500;
+            letter-spacing: 0.02em;
         }
 
-        /* Main Content Sections */
+        /* Content Sections */
         .section {
-            padding: 100px 0;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 1px solid #a7f3d0;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #059669;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #2c5aa0;
+            font-size: 48px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
         }
 
-        .section-subtitle {
-            font-size: 1.3rem;
-            text-align: center;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 4rem;
+        .section-description {
+            font-size: 20px;
+            color: #4a5568;
             line-height: 1.7;
+            font-weight: 400;
         }
 
         /* Experience Grid */
         .experience-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
         }
 
         .experience-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #059669, #10b981);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .experience-card:hover::before {
+            transform: scaleX(1);
         }
 
         .experience-card h4 {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: 700;
-            color: #2c5aa0;
-            margin-bottom: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
         }
 
         .experience-card .role {
-            font-size: 1.1rem;
+            font-size: 18px;
             font-weight: 600;
-            color: #444;
-            margin-bottom: 0.5rem;
+            color: #059669;
+            margin-bottom: 8px;
         }
 
         .experience-card .company {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .experience-card p {
-            color: #666;
+            color: #4a5568;
             line-height: 1.7;
+            font-size: 16px;
         }
 
         /* Board Value Section */
         .board-value {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
         }
 
         .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
         }
 
         .value-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
         }
 
         .value-icon {
             width: 80px;
             height: 80px;
-            background: #2c5aa0;
-            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10b981);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            font-size: 32px;
+            margin-bottom: 24px;
             color: white;
+            box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);
         }
 
         .value-card h4 {
-            font-size: 1.4rem;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: #2c5aa0;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            letter-spacing: -0.01em;
         }
 
         .value-card p {
-            color: #666;
+            color: #4a5568;
             line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-item {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            font-weight: 700;
+            font-size: 20px;
+            color: #4a5568;
+        }
+
+        .portfolio-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .portfolio-item h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .portfolio-item p {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .portfolio-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-status.exited {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
         }
 
         /* Contact Section */
         .contact {
-            background: #2c5aa0;
+            background: #1a1a1a;
             color: white;
             text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #059669, transparent);
         }
 
         .contact .section-title {
             color: white;
         }
 
-        .contact .section-subtitle {
-            color: rgba(255,255,255,0.9);
+        .contact .section-description {
+            color: #cbd5e1;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 64px;
+            margin-top: 48px;
             flex-wrap: wrap;
         }
 
         .contact-item {
             text-align: center;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(5, 150, 105, 0.1);
+            border-color: rgba(5, 150, 105, 0.3);
+            transform: translateY(-4px);
         }
 
         .contact-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #10b981;
         }
 
         .contact-item a {
             color: white;
             text-decoration: none;
             font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
-            text-decoration: underline;
+            color: #10b981;
         }
 
         /* Footer */
         footer {
-            background: #1e3d72;
-            color: white;
+            background: #0f172a;
+            color: #cbd5e1;
             text-align: center;
-            padding: 2rem 0;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
             }
 
-            .hero-subtitle {
-                font-size: 1.2rem;
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .hero-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+            .hero {
+                padding: 100px 0 60px;
             }
 
-            .experience-grid, .value-grid {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .experience-grid,
+            .value-grid {
                 grid-template-columns: 1fr;
             }
 
             .contact-info {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            .stat-item h3 {
+                font-size: 40px;
             }
         }
 
@@ -332,135 +791,77 @@
         html {
             scroll-behavior: smooth;
         }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s, transform 0.8s;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Andrew Stivers</div>
+            <a href="#home" class="logo">Andrew Stivers</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#board-value">Board Value</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Connect</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
         <div class="container">
-            <h1>Delivering Strategic Outcomes</h1>
-            <div class="hero-subtitle">Technology Investment Banking Director & Board Leader</div>
-            <p class="hero-description">
-                Director at Peak Technology Partners with 15+ years in technology investment banking and investing. 
-                Executed over $12 billion in transaction value for private and public company clients, bringing deep transactional expertise and governance acumen to guide technology companies toward optimal outcomes.
-            </p>
-            <a href="#contact" class="cta-button">Connect for Board Opportunities</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">Outcome Focused</div>
+                    <h1>M&A and Negotiation Expertise</h1>
+                    <div class="hero-subtitle">Technology Investment Banking & Corporate Advisory</div>
+                    <p class="hero-description">
+                        Director at Peak Technology Partners with 15+ years in technology investment banking. 
+                        Over $12 billion in executed transaction value, bringing institutional-grade expertise to technology company boards seeking transformational growth and strategic outcomes.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">Connect for Board Opportunities</a>
+                        <a href="#experience" class="btn-secondary">View Experience</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Z62_0439.jpg" 
+                         alt="Andrew Stivers - Technology Investment Banking Director, professional headshot" 
+                         loading="lazy"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="hero-image-placeholder" style="display:none;">
+                        Professional Photo
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Education & Recognition</h2>
-            <p class="section-subtitle">
-                Academic foundation and industry recognition reflecting commitment to excellence in technology investment banking and community leadership.
-            </p>
-            
-            <div class="value-grid">
-                <div class="value-card fade-in">
-                    <div class="value-icon">🎓</div>
-                    <h4>Miami University (OH)</h4>
-                    <p>Bachelor of Arts in Economics, cum laude. Strong analytical foundation supporting sophisticated financial analysis and transaction structuring in technology investment banking.</p>
-                </div>
-
-                <div class="value-card fade-in">
-                    <div class="value-icon">🏆</div>
-                    <h4>M&A Advisor Recognition</h4>
-                    <p>Recognized as an emerging leader in technology investment banking by The M&A Advisor, reflecting excellence in transaction execution and client service.</p>
-                </div>
-
-                <div class="value-card fade-in">
-                    <div class="value-icon">🌟</div>
-                    <h4>Community Leadership</h4>
-                    <p>Named by the Wichita Business Journal as part of the next generation of city and community leaders, demonstrating commitment to civic engagement and regional development.</p>
-                </div>
-
-                <div class="value-card fade-in">
-                    <div class="value-icon">📋</div>
-                    <h4>Professional Registration</h4>
-                    <p>Registered Representative of Finalis Securities LLC, Member FINRA/SIPC, ensuring adherence to the highest professional and ethical standards in investment banking.</p>
-                </div>
-            </div>
-        </div>
-
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Notable Transaction Experience</h2>
-            <p class="section-subtitle">
-                Representative transactions across M&A, capital raises, and public offerings, demonstrating expertise in complex technology deals.
-            </p>
-            
-            <div class="experience-grid">
-                <div class="experience-card fade-in">
-                    <h4>Major M&A Transactions</h4>
-                    <div class="role">$10B+ in Transaction Value</div>
-                    <div class="company">Strategic & Financial Buyers</div>
-                    <p><strong>Spansion-Cypress "Merger of Equals" ($4.0B)</strong> | <strong>KKR acquisition of Optiv ($2.0B)</strong> | <strong>Vista Equity acquisitions of Marketo ($1.8B) and Cvent ($1.7B)</strong> | inContact sale to NICE ($940M)</p>
-                </div>
-
-                <div class="experience-card fade-in">
-                    <h4>Capital Markets & IPOs</h4>
-                    <div class="role">Public Offerings & Growth Capital</div>
-                    <div class="company">Technology IPOs & Follow-ons</div>
-                    <p><strong>Snapchat IPO ($3.4B) - Co-Manager</strong> | <strong>Groupon IPO ($700M) - Co-Manager</strong> | SailPoint IPO ($240M) - Bookrunner | Atlassian IPO ($462M) - Bookrunner | Plus follow-on offerings for Criteo, Dropbox</p>
-                </div>
-
-                <div class="experience-card fade-in">
-                    <h4>Growth & Expansion Transactions</h4>
-                    <div class="role">Private Equity & Strategic Sales</div>
-                    <div class="company">Middle Market Technology</div>
-                    <p>Ex Libris sale to ProQuest ($525M) | CSID sale to Experian ($365M) | Blackstone recapitalization of Accuvant ($195M) | Plus numerous growth-stage transactions across SaaS, cybersecurity, and enterprise software</p>
-                </div>
-
-                <div class="experience-card fade-in">
-                    <h4>Emerging Technology Deals</h4>
-                    <div class="role">Innovation-Focused Transactions</div>
-                    <div class="company">High-Growth Technology</div>
-                    <p>Swarm64 sale to ServiceNow | Leanplum sale to Clevertap | Panzura sale to Profile Capital | Yantriks sale to Blue Yonder | Representative of emerging technology M&A across AI, data analytics, and cloud infrastructure</p>
-                </div>
-            </div>
-        </div>
-
     <section class="stats">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+        </div>
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item fade-in">
                     <h3>15+</h3>
-                    <p>Years Investment Banking</p>
+                    <p>Years Investment Banking Excellence</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>$12B+</h3>
-                    <p>Total Transaction Value</p>
+                    <p>Total Transaction Value Executed</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>50+</h3>
-                    <p>Completed Transactions</p>
+                    <p>Complex Transactions Completed</p>
                 </div>
                 <div class="stat-item fade-in">
                     <h3>M&A</h3>
-                    <p>Advisor Recognition</p>
+                    <p>Industry Recognition & Awards</p>
                 </div>
             </div>
         </div>
@@ -468,38 +869,198 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Executive Experience</h2>
-            <p class="section-subtitle">
-                Director at Peak Technology Partners with over $12 billion in transaction value executed. Recognized as an emerging leader in technology investment banking by The M&A Advisor and by the Wichita Business Journal as part of the next generation of community leaders.
-            </p>
+            <div class="section-header">
+                <div class="section-badge">Career Excellence</div>
+                <h2 class="section-title">Investment Banking Leadership</h2>
+                <p class="section-description">
+                    Deep transactional expertise across technology M&A, capital markets, and strategic advisory, 
+                    with recognition as an emerging leader in technology investment banking by The M&A Advisor.
+                </p>
+            </div>
             
             <div class="experience-grid">
                 <div class="experience-card fade-in">
                     <h4>Director, Technology Investment Banking</h4>
                     <div class="role">Peak Technology Partners</div>
                     <div class="company">Current Position</div>
-                    <p>Director at Peak Technology Partners with over $12 billion in executed transaction value for private and public technology clients. Partner with company owners on M&A transactions and capital raises, specializing in optimal positioning and competitive processes.</p>
+                    <p>Leading complex M&A transactions and capital raises for technology companies. Over $12 billion in executed transaction value across private and public markets, specializing in optimal positioning and competitive processes that maximize shareholder value.</p>
                 </div>
 
                 <div class="experience-card fade-in">
                     <h4>Senior Vice President</h4>
                     <div class="role">D.A. Davidson & Co.</div>
                     <div class="company">Technology Coverage Group</div>
-                    <p>Led technology investment banking transactions as Senior Vice President in D.A. Davidson's technology coverage group, advising clients on complex M&A transactions and strategic initiatives across the technology sector.</p>
+                    <p>Senior investment banker in D.A. Davidson's technology practice, executing complex M&A transactions and IPO processes. Developed deep sector expertise across enterprise software, cybersecurity, and financial technology verticals.</p>
                 </div>
 
                 <div class="experience-card fade-in">
                     <h4>Vice President</h4>
                     <div class="role">Jefferies LLC</div>
                     <div class="company">Technology Investment Banking</div>
-                    <p>Vice President in Jefferies' technology coverage group, executing transactions for technology companies and gaining deep expertise in technology sector dynamics and valuation frameworks.</p>
+                    <p>Investment banking professional in Jefferies' technology group, gaining comprehensive experience in transaction execution, valuation analysis, and client relationship management across the technology ecosystem.</p>
                 </div>
 
                 <div class="experience-card fade-in">
-                    <h4>Senior Director & Early Employee</h4>
+                    <h4>Operating & Investment Experience</h4>
                     <div class="role">Lighter Capital & SecondMarket</div>
-                    <div class="company">Technology Investing & Operations</div>
-                    <p>Senior Director at Lighter Capital focused on early-stage technology investments. Early employee at SecondMarket (financial technology company acquired by NASDAQ), providing operational technology company experience.</p>
+                    <div class="company">Technology Company Operations</div>
+                    <p>Senior Director at Lighter Capital focused on early-stage technology investments. Early employee at SecondMarket (acquired by NASDAQ), providing firsthand operational perspective that informs board-level strategic thinking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Transaction Excellence</div>
+                <h2 class="section-title">Notable Transaction Experience</h2>
+                <p class="section-description">
+                    Representative transactions demonstrating expertise across M&A, capital markets, and strategic advisory in technology sector deals ranging from growth-stage to large-cap public companies.
+                </p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <h4>Major M&A Transactions</h4>
+                    <div class="role">Large-Cap Technology Deals</div>
+                    <div class="company">$12B+ Total Transaction Value</div>
+                    <p>Led execution on marquee transactions including complex merger transactions, strategic acquisitions by private equity firms, and multi-billion dollar technology company combinations across diverse verticals.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Capital Markets Excellence</h4>
+                    <div class="role">IPO & Public Offerings</div>
+                    <div class="company">Public Market Expertise</div>
+                    <p>Extensive experience in IPO processes, follow-on offerings, and public market transactions for technology companies. Deep understanding of public market dynamics and institutional investor requirements.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Growth & Middle Market</h4>
+                    <div class="role">Strategic & Financial Buyers</div>
+                    <div class="company">Diverse Transaction Types</div>
+                    <p>Comprehensive experience across growth equity transactions, management buyouts, recapitalizations, and strategic sales to both financial sponsors and corporate acquirers in technology sector.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Emerging Technology Focus</h4>
+                    <div class="role">Innovation-Driven Deals</div>
+                    <div class="company">Next-Generation Technologies</div>
+                    <p>Active involvement in transactions involving AI, data analytics, cloud infrastructure, and other emerging technology areas, maintaining deep market intelligence on innovation trends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section board-value">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Investment Portfolio</div>
+                <h2 class="section-title">Technology Investment Portfolio</h2>
+                <p class="section-description">
+                    Strategic investments in high-growth technology companies across diverse sectors, 
+                    demonstrating active participation in the technology ecosystem and market insight.
+                </p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="yassir">YS</div>
+                    <h4>Yassir</h4>
+                    <p>Multi-service super app</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="magic">MG</div>
+                    <h4>Magic</h4>
+                    <p>AI-powered automation platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="voiz">VZ</div>
+                    <h4>VOIZ</h4>
+                    <p>Voice technology solutions</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="genies">GN</div>
+                    <h4>Genies</h4>
+                    <p>Avatar technology platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="workstream">WS</div>
+                    <h4>Workstream</h4>
+                    <p>Workforce management platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="monument">MN</div>
+                    <h4>Monument</h4>
+                    <p>Digital health platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="unit21">U21</div>
+                    <h4>Unit21</h4>
+                    <p>Risk & compliance platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="rehive">RH</div>
+                    <h4>Rehive</h4>
+                    <p>Financial services platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="thelist">TL</div>
+                    <h4>THE LIST</h4>
+                    <p>Digital platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="gosats">GS</div>
+                    <h4>GoSats</h4>
+                    <p>Cryptocurrency platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="bravehealth">BH</div>
+                    <h4>Brave Health</h4>
+                    <p>Mental health platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="upstream">UP</div>
+                    <h4>Upstream</h4>
+                    <p>Mobile technology platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="canvs">CV</div>
+                    <h4>Canvs</h4>
+                    <p>AI-powered insights platform</p>
+                    <div class="portfolio-status exited">Exited</div>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="lighter">LC</div>
+                    <h4>Lighter Capital</h4>
+                    <p>Growth capital platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="schoology">SC</div>
+                    <h4>Schoology</h4>
+                    <p>Education technology platform</p>
+                    <div class="portfolio-status exited">Exited</div>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" data-company="secondmarket">SM</div>
+                    <h4>SecondMarket</h4>
+                    <p>Private securities trading platform</p>
+                    <div class="portfolio-status exited">Exited</div>
                 </div>
             </div>
         </div>
@@ -507,57 +1068,106 @@
 
     <section id="board-value" class="section board-value">
         <div class="container">
-            <h2 class="section-title">Board Value Proposition</h2>
-            <p class="section-subtitle">
-                Combining deep M&A and capital markets expertise with operational experience to help technology boards navigate complex strategic decisions and optimize shareholder value.
-            </p>
+            <div class="section-header">
+                <div class="section-badge">Board Expertise</div>
+                <h2 class="section-title">Strategic Board Value Proposition</h2>
+                <p class="section-description">
+                    Combining institutional-grade M&A expertise with deep technology market intelligence to guide technology companies through complex strategic decisions, capital raising, and value optimization initiatives.
+                </p>
+            </div>
             
             <div class="value-grid">
                 <div class="value-card fade-in">
                     <div class="value-icon">💼</div>
-                    <h4>M&A & Strategic Transactions</h4>
-                    <p>Deep expertise in positioning companies for optimal M&A outcomes, conducting competitive sale processes, and negotiating complex transactions that maximize shareholder value.</p>
+                    <h4>M&A Strategy & Execution</h4>
+                    <p>Deep expertise in positioning companies for premium valuations, conducting competitive sale processes, and negotiating complex transactions that maximize stakeholder value through optimal timing and strategic positioning.</p>
                 </div>
 
                 <div class="value-card fade-in">
                     <div class="value-icon">📈</div>
                     <h4>Capital Markets & Growth Financing</h4>
-                    <p>Extensive experience in capital raises, IPO processes, and growth financing strategies. Participated in marquee public offerings including Snapchat, Atlassian, and SailPoint.</p>
+                    <p>Comprehensive experience across capital raising strategies, from growth equity to IPO processes. Understanding of institutional investor requirements and public market dynamics for technology companies.</p>
                 </div>
 
                 <div class="value-card fade-in">
                     <div class="value-icon">🎯</div>
                     <h4>Strategic Positioning & Valuation</h4>
-                    <p>Proven ability to position technology companies for premium valuations through strategic narrative development, competitive differentiation, and optimal timing of transactions.</p>
+                    <p>Proven ability to develop compelling strategic narratives, optimize competitive positioning, and structure transactions that reflect full enterprise value across diverse technology verticals and market cycles.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🌐</div>
+                    <h4>Technology Market Intelligence</h4>
+                    <p>Deep understanding of technology sector dynamics, emerging trends, competitive landscapes, and strategic buyer motivations gained through 50+ transactions and ongoing market participation.</p>
                 </div>
 
                 <div class="value-card fade-in">
                     <div class="value-icon">🤝</div>
-                    <h4>Stakeholder Management</h4>
-                    <p>Exceptional relationship management skills with technology companies, private equity, venture capital, and strategic acquirers across the technology ecosystem.</p>
+                    <h4>Stakeholder Relationship Management</h4>
+                    <p>Exceptional experience managing complex stakeholder dynamics across management teams, investors, strategic partners, and professional service providers in high-stakes transaction environments.</p>
                 </div>
 
                 <div class="value-card fade-in">
                     <div class="value-icon">⚖️</div>
-                    <h4>High-Integrity Approach</h4>
-                    <p>Commitment to straight talk and ethical business practices, building trust with all stakeholders through transparent communication and principled negotiation.</p>
+                    <h4>Governance & Fiduciary Excellence</h4>
+                    <p>Commitment to highest standards of corporate governance, fiduciary responsibility, and ethical business practices. Registered Representative maintaining strict regulatory and professional compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Recognition & Education</div>
+                <h2 class="section-title">Professional Recognition & Foundation</h2>
+                <p class="section-description">
+                    Academic excellence and industry recognition reflecting commitment to professional development, 
+                    community leadership, and maintaining the highest standards in technology investment banking.
+                </p>
+            </div>
+            
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">🎓</div>
+                    <h4>Academic Excellence</h4>
+                    <p>Bachelor of Arts in Economics, cum laude, from Miami University (OH). Strong analytical foundation supporting sophisticated financial analysis, valuation modeling, and strategic transaction structuring.</p>
                 </div>
 
                 <div class="value-card fade-in">
-                    <div class="value-icon">🔍</div>
-                    <h4>Technology Market Intelligence</h4>
-                    <p>Deep understanding of technology market dynamics, valuation trends, and strategic buyer motivations gained through 50+ completed transactions and ongoing market activity.</p>
+                    <div class="value-icon">🏆</div>
+                    <h4>Industry Recognition</h4>
+                    <p>Named emerging leader in technology investment banking by The M&A Advisor, recognizing excellence in transaction execution, client service, and contributions to the technology M&A community.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🌟</div>
+                    <h4>Community Leadership</h4>
+                    <p>Recognized by Wichita Business Journal as part of the next generation of city and community leaders, demonstrating commitment to civic engagement and regional economic development.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">📋</div>
+                    <h4>Professional Registration</h4>
+                    <p>Registered Representative of Finalis Securities LLC, Member FINRA/SIPC. Maintains adherence to the highest professional, ethical, and regulatory standards in investment banking practice.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="section contact">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+        </div>
         <div class="container">
-            <h2 class="section-title">Ready to Drive Outcomes Together</h2>
-            <p class="section-subtitle">
-                Let's discuss how strategic governance and operational expertise can accelerate your company's growth and success.
-            </p>
+            <div class="section-header">
+                <div class="section-badge">Connect</div>
+                <h2 class="section-title">Ready to Drive Strategic Outcomes</h2>
+                <p class="section-description">
+                    Let's discuss how investment banking expertise and technology market intelligence 
+                    can accelerate your company's strategic initiatives and board effectiveness.
+                </p>
+            </div>
             
             <div class="contact-info">
                 <div class="contact-item">
@@ -574,12 +1184,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Andrew Stivers. All rights reserved. | Technology Executive & Board Leader</p>
+            <p>&copy; 2025 Andrew Stivers. Technology Investment Banking Director & Board Leader</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
+        // Performance-optimized smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -593,9 +1203,9 @@
             });
         });
 
-        // Fade in animation on scroll
+        // Optimized intersection observer with debouncing
         const observerOptions = {
-            threshold: 0.1,
+            threshold: 0.15,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -603,6 +1213,8 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Stop observing once visible for better performance
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -612,26 +1224,88 @@
             observer.observe(el);
         });
 
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
+        // Throttled scroll handler for header
+        let ticking = false;
+        let lastScrollY = window.scrollY;
+        
+        function updateHeader() {
             const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(24px)';
+                header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
             } else {
-                header.style.background = '#fff';
-                header.style.backdropFilter = 'none';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(20px)';
+                header.style.boxShadow = 'none';
+            }
+            
+            // Hide/show header on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeader);
+                ticking = true;
             }
         });
 
-        // Add loading animation
+        // Only apply parallax if reduced motion is not preferred
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let parallaxTicking = false;
+            
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                const parallaxSpeed = 0.5;
+                
+                if (hero && scrolled < hero.offsetHeight) {
+                    hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+                }
+                parallaxTicking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!parallaxTicking) {
+                    window.requestAnimationFrame(updateParallax);
+                    parallaxTicking = true;
+                }
+            });
+        }
+
+        // Loading animation
         window.addEventListener('load', function() {
             document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s';
+            document.body.style.transition = 'opacity 0.6s ease';
+            
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
         });
+
+        // Stagger animations for grid items
+        const animateGrid = (gridSelector, delay = 150) => {
+            const gridItems = document.querySelectorAll(`${gridSelector} .fade-in`);
+            gridItems.forEach((item, index) => {
+                item.style.transitionDelay = `${index * delay}ms`;
+            });
+        };
+
+        // Apply stagger animations
+        animateGrid('.stats-grid', 100);
+        animateGrid('.experience-grid', 200);
+        animateGrid('.value-grid', 150);
+        animateGrid('.portfolio-grid', 50);
     </script>
 </body>
 </html>
