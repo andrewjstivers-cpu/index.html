@@ -444,6 +444,88 @@
             font-size: 16px;
         }
 
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .portfolio-item {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .portfolio-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .portfolio-logo span {
+            color: #4a5568;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .portfolio-item h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .portfolio-item p {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .portfolio-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .portfolio-status.exited {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+        }
+
         /* Contact Section */
         .contact {
             background: #1a1a1a;
@@ -853,6 +935,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#board-value">Board Value</a></li>
                 <li><a href="#contact">Connect</a></li>
             </ul>
@@ -895,6 +978,151 @@
             </div>
         </div>
     </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Investment Portfolio</div>
+                <h2 class="section-title">Technology Investment Portfolio</h2>
+                <p class="section-description">
+                    Strategic investments in high-growth technology companies across diverse sectors, 
+                    demonstrating active participation in the technology ecosystem and market insight.
+                </p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #6366f1;">
+                        <span>YA</span>
+                    </div>
+                    <h4>Yassir</h4>
+                    <p>Multi-service super app</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span>▲</span>
+                    </div>
+                    <h4>Magic</h4>
+                    <p>AI-powered automation platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #1a1a1a;">
+                        <span>VOIZ</span>
+                    </div>
+                    <h4>VOIZ</h4>
+                    <p>Voice technology solutions</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #9333ea;">
+                        <span>⬢</span>
+                    </div>
+                    <h4>Genies</h4>
+                    <p>Avatar technology platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #3b82f6;">
+                        <span>〜</span>
+                    </div>
+                    <h4>Workstream</h4>
+                    <p>Workforce management platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #059669;">
+                        <span>⬛</span>
+                    </div>
+                    <h4>Monument</h4>
+                    <p>Digital health platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #dc2626;">
+                        <span>U21</span>
+                    </div>
+                    <h4>Unit21</h4>
+                    <p>Risk & compliance platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #8b5cf6;">
+                        <span>○</span>
+                    </div>
+                    <h4>Rehive</h4>
+                    <p>Financial services platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #6b7280;">
+                        <span>—</span>
+                    </div>
+                    <h4>THE LIST</h4>
+                    <p>Digital platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #1f2937;">
+                        <span>GS</span>
+                    </div>
+                    <h4>GoSats</h4>
+                    <p>Cryptocurrency platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #10b981;">
+                        <span>BH</span>
+                    </div>
+                    <h4>Brave Health</h4>
+                    <p>Mental health platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #0ea5e9;">
+                        <span>↗</span>
+                    </div>
+                    <h4>Upstream</h4>
+                    <p>Mobile technology platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #1e293b;">
+                        <span>canvs</span>
+                    </div>
+                    <h4>Canvs</h4>
+                    <p>AI-powered insights platform</p>
+                    <div class="portfolio-status exited">Exited</div>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #f59e0b;">
+                        <span>LC</span>
+                    </div>
+                    <h4>Lighter Capital</h4>
+                    <p>Growth capital platform</p>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #06b6d4;">
+                        <span>S</span>
+                    </div>
+                    <h4>Schoology</h4>
+                    <p>Education technology platform</p>
+                    <div class="portfolio-status exited">Exited</div>
+                </div>
+
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-logo" style="background: #1f2937;">
+                        <span>SM</span>
+                    </div>
+                    <h4>SecondMarket</h4>
+                    <p>Private securities trading platform</p>
+                    <div class="portfolio-status exited">Exited</div>
+                </div>
+            </div>
+        </div>
 
     <section class="stats">
         <div class="animated-bg">
@@ -1135,7 +1363,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Andrew Stivers.</p>
+            <p>&copy; 2025 Andrew Stivers. Technology Investment Banking Director & Board Leader</p>
         </div>
     </footer>
 
@@ -1236,6 +1464,3 @@
     </script>
 </body>
 </html>
-
-
-
