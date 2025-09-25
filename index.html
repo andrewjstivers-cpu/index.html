@@ -221,6 +221,228 @@
             object-position: center;
         }
 
+        /* Animated Background Elements */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08));
+            animation: float 20s infinite ease-in-out;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .floating-shape.shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        }
+
+        .floating-shape.shape-2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: -7s;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
+        }
+
+        .floating-shape.shape-3 {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: -14s;
+            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        }
+
+        .floating-shape.shape-4 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            right: 30%;
+            animation-delay: -3s;
+            clip-path: polygon(40% 0%, 60% 0%, 100% 40%, 100% 60%, 60% 100%, 40% 100%, 0% 60%, 0% 40%);
+        }
+
+        .floating-shape.shape-5 {
+            width: 140px;
+            height: 140px;
+            top: 10%;
+            right: 40%;
+            animation-delay: -10s;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        }
+
+        .floating-dots {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(147, 51, 234, 0.4);
+            border-radius: 50%;
+            animation: floatDots 15s infinite linear;
+        }
+
+        .floating-dots.dot-1 {
+            top: 25%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .floating-dots.dot-2 {
+            top: 70%;
+            left: 60%;
+            animation-delay: -5s;
+        }
+
+        .floating-dots.dot-3 {
+            top: 50%;
+            right: 20%;
+            animation-delay: -10s;
+        }
+
+        .floating-dots.dot-4 {
+            top: 90%;
+            left: 40%;
+            animation-delay: -2s;
+        }
+
+        .geometric-lines {
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(147, 51, 234, 0.3), transparent);
+            animation: moveLine 25s infinite ease-in-out;
+        }
+
+        .geometric-lines.line-1 {
+            top: 30%;
+            left: -200px;
+            transform: rotate(15deg);
+            animation-delay: 0s;
+        }
+
+        .geometric-lines.line-2 {
+            top: 70%;
+            right: -200px;
+            transform: rotate(-15deg);
+            animation-delay: -8s;
+        }
+
+        .geometric-lines.line-3 {
+            top: 50%;
+            left: -200px;
+            transform: rotate(45deg);
+            animation-delay: -16s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.4;
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px) rotate(90deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) translateX(-15px) rotate(180deg);
+                opacity: 0.3;
+            }
+            75% {
+                transform: translateY(-40px) translateX(10px) rotate(270deg);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes floatDots {
+            0% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes moveLine {
+            0% {
+                transform: translateX(0) rotate(15deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(100vw) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        /* Dark section animated elements */
+        .stats .animated-bg .floating-shape,
+        .contact .animated-bg .floating-shape {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(196, 121, 255, 0.12));
+        }
+
+        .stats .animated-bg .floating-dots,
+        .contact .animated-bg .floating-dots {
+            background: rgba(168, 85, 247, 0.5);
+        }
+
+        .stats .animated-bg .geometric-lines,
+        .contact .animated-bg .geometric-lines {
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.4), transparent);
+        }
+
+        /* Particle system for hero */
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(147, 51, 234, 0.6);
+            border-radius: 50%;
+            animation: particle 12s infinite ease-in-out;
+        }
+
+        @keyframes particle {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1);
+                opacity: 0;
+            }
+        }
+
         /* Stats Section */
         .stats {
             padding: 100px 0;
@@ -684,237 +906,7 @@
             .stat-item h3 {
                 font-size: 40px;
             }
-        }
 
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animated Background Elements */
-        .animated-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .floating-shape {
-            position: absolute;
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.12), rgba(168, 85, 247, 0.08));
-            animation: float 20s infinite ease-in-out;
-            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-        }
-
-        .floating-shape.shape-1 {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-        }
-
-        .floating-shape.shape-2 {
-            width: 120px;
-            height: 120px;
-            top: 60%;
-            right: 15%;
-            animation-delay: -7s;
-            clip-path: polygon(25% 0%, 75% 0%, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0% 75%, 0% 25%);
-        }
-
-        .floating-shape.shape-3 {
-            width: 60px;
-            height: 60px;
-            top: 80%;
-            left: 20%;
-            animation-delay: -14s;
-            clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-        }
-
-        .floating-shape.shape-4 {
-            width: 100px;
-            height: 100px;
-            top: 40%;
-            right: 30%;
-            animation-delay: -3s;
-            clip-path: polygon(40% 0%, 60% 0%, 100% 40%, 100% 60%, 60% 100%, 40% 100%, 0% 60%, 0% 40%);
-        }
-
-        .floating-shape.shape-5 {
-            width: 140px;
-            height: 140px;
-            top: 10%;
-            right: 40%;
-            animation-delay: -10s;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-        }
-
-        .floating-dots {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(147, 51, 234, 0.4);
-            border-radius: 50%;
-            animation: floatDots 15s infinite linear;
-        }
-
-        .floating-dots.dot-1 {
-            top: 25%;
-            left: 30%;
-            animation-delay: 0s;
-        }
-
-        .floating-dots.dot-2 {
-            top: 70%;
-            left: 60%;
-            animation-delay: -5s;
-        }
-
-        .floating-dots.dot-3 {
-            top: 50%;
-            right: 20%;
-            animation-delay: -10s;
-        }
-
-        .floating-dots.dot-4 {
-            top: 90%;
-            left: 40%;
-            animation-delay: -2s;
-        }
-
-        .geometric-lines {
-            position: absolute;
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(5, 150, 105, 0.2), transparent);
-            animation: moveLine 25s infinite ease-in-out;
-        }
-
-        .geometric-lines.line-1 {
-            top: 30%;
-            left: -200px;
-            transform: rotate(15deg);
-            animation-delay: 0s;
-        }
-
-        .geometric-lines.line-2 {
-            top: 70%;
-            right: -200px;
-            transform: rotate(-15deg);
-            animation-delay: -8s;
-        }
-
-        .geometric-lines.line-3 {
-            top: 50%;
-            left: -200px;
-            transform: rotate(45deg);
-            animation-delay: -16s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) translateX(0px) rotate(0deg);
-                opacity: 0.4;
-            }
-            25% {
-                transform: translateY(-30px) translateX(20px) rotate(90deg);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-10px) translateX(-15px) rotate(180deg);
-                opacity: 0.3;
-            }
-            75% {
-                transform: translateY(-40px) translateX(10px) rotate(270deg);
-                opacity: 0.6;
-            }
-        }
-
-        @keyframes floatDots {
-            0% {
-                transform: translateY(0px) translateX(0px);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) translateX(50px);
-                opacity: 0;
-            }
-        }
-
-        @keyframes moveLine {
-            0% {
-                transform: translateX(0) rotate(15deg);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.5;
-            }
-            80% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateX(100vw) rotate(15deg);
-                opacity: 0;
-            }
-        }
-
-        /* Dark section animated elements */
-        .stats .animated-bg .floating-shape,
-        .contact .animated-bg .floating-shape {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.18), rgba(196, 121, 255, 0.12));
-        }
-
-        .stats .animated-bg .floating-dots,
-        .contact .animated-bg .floating-dots {
-            background: rgba(168, 85, 247, 0.5);
-        }
-
-        .stats .animated-bg .geometric-lines,
-        .contact .animated-bg .geometric-lines {
-            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.4), transparent);
-        }
-
-        /* Particle system for hero */
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(5, 150, 105, 0.5);
-            border-radius: 50%;
-            animation: particle 12s infinite ease-in-out;
-        }
-
-        @keyframes particle {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* Mobile optimizations for animations */
-        @media (max-width: 768px) {
             .animated-bg {
                 display: none;
             }
@@ -929,6 +921,11 @@
                 animation: none;
                 opacity: 0.1;
             }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -968,10 +965,6 @@
                     <h1>M&A and Negotiation Expertise</h1>
                     <div class="hero-subtitle">Technology Investment Banking & Corporate Advisory</div>
                     <p class="hero-description">
-                        Director at Peak Technology Partners with 15+ years in technology investment banking. 
-                        Over $12 billion in executed transaction value, bringing institutional-grade expertise to technology company boards seeking transformational growth and strategic outcomes.
-                    </p>
-                    <div class="hero-cta">
                         <a href="#contact" class="btn-primary">Connect for Board Opportunities</a>
                         <a href="#experience" class="btn-secondary">View Experience</a>
                     </div>
@@ -982,167 +975,6 @@
             </div>
         </div>
     </section>
-
-    <section id="portfolio" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Investment Portfolio</div>
-                <h2 class="section-title">Technology Investment Portfolio</h2>
-                <p class="section-description">
-                    Strategic investments in high-growth technology companies across diverse sectors, 
-                    demonstrating active participation in the technology ecosystem and market insight.
-                </p>
-            </div>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/yassir.com" alt="Yassir Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">YA</span>
-                    </div>
-                    <h4>Yassir</h4>
-                    <p>Multi-service super app</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/magic.dev" alt="Magic Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">▲</span>
-                    </div>
-                    <h4>Magic</h4>
-                    <p>AI-powered automation platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/voiz.co" alt="VOIZ Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">VOIZ</span>
-                    </div>
-                    <h4>VOIZ</h4>
-                    <p>Voice technology solutions</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/genies.com" alt="Genies Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">⬢</span>
-                    </div>
-                    <h4>Genies</h4>
-                    <p>Avatar technology platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/workstream.is" alt="Workstream Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">〜</span>
-                    </div>
-                    <h4>Workstream</h4>
-                    <p>Workforce management platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/joinmonument.com" alt="Monument Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">⬛</span>
-                    </div>
-                    <h4>Monument</h4>
-                    <p>Digital health platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/unit21.ai" alt="Unit21 Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">U21</span>
-                    </div>
-                    <h4>Unit21</h4>
-                    <p>Risk & compliance platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/rehive.com" alt="Rehive Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">○</span>
-                    </div>
-                    <h4>Rehive</h4>
-                    <p>Financial services platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/thelist.co" alt="THE LIST Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">—</span>
-                    </div>
-                    <h4>THE LIST</h4>
-                    <p>Digital platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/gosats.org" alt="GoSats Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">GS</span>
-                    </div>
-                    <h4>GoSats</h4>
-                    <p>Cryptocurrency platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/bravehealth.com" alt="Brave Health Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">BH</span>
-                    </div>
-                    <h4>Brave Health</h4>
-                    <p>Mental health platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/upstream.ai" alt="Upstream Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">↗</span>
-                    </div>
-                    <h4>Upstream</h4>
-                    <p>Mobile technology platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/canvs.ai" alt="Canvs Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">canvs</span>
-                    </div>
-                    <h4>Canvs</h4>
-                    <p>AI-powered insights platform</p>
-                    <div class="portfolio-status exited">Exited</div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/lightercapital.com" alt="Lighter Capital Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">LC</span>
-                    </div>
-                    <h4>Lighter Capital</h4>
-                    <p>Growth capital platform</p>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/schoology.com" alt="Schoology Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">S</span>
-                    </div>
-                    <h4>Schoology</h4>
-                    <p>Education technology platform</p>
-                    <div class="portfolio-status exited">Exited</div>
-                </div>
-
-                <div class="portfolio-item fade-in">
-                    <div class="portfolio-logo">
-                        <img src="https://logo.clearbit.com/secondmarket.com" alt="SecondMarket Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <span style="display:none;">SM</span>
-                    </div>
-                    <h4>SecondMarket</h4>
-                    <p>Private securities trading platform</p>
-                    <div class="portfolio-status exited">Exited</div>
-                </div>
-            </div>
-        </div>
 
     <section class="stats">
         <div class="animated-bg">
@@ -1645,4 +1477,7 @@
         animateGrid('.value-grid', 150);
     </script>
 </body>
-</html>
+</html>Director at Peak Technology Partners with 15+ years in technology investment banking. 
+                        Over $12 billion in executed transaction value, bringing institutional-grade expertise to technology company boards seeking transformational growth and strategic outcomes.
+                    </p>
+                    <div class="hero-cta">
