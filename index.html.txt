@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Stivers - Technology Executive & Board Member</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c5aa0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #2c5aa0;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c5aa0;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+
+        /* Experience Grid */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .experience-card h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .experience-card .role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .company {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Board Value Section */
+        .board-value {
+            background: #f8f9fa;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #2c5aa0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-card h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c5aa0;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #2c5aa0;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3d72;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .experience-grid, .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Andrew Stivers</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#board-value">Board Value</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Delivering Strategic Outcomes</h1>
+            <div class="hero-subtitle">Technology Investment Banking Director & Board Leader</div>
+            <p class="hero-description">
+                Seasoned investment banking professional with 15+ years advising technology companies on M&A and capital transactions. 
+                Bringing deep transactional expertise, operational experience, and governance acumen to guide technology companies toward optimal outcomes.
+            </p>
+            <a href="#contact" class="cta-button">Connect for Board Opportunities</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Notable Transaction Experience</h2>
+            <p class="section-subtitle">
+                Representative transactions across M&A, capital raises, and public offerings, demonstrating expertise in complex technology deals.
+            </p>
+            
+            <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <h4>Major M&A Transactions</h4>
+                    <div class="role">$10B+ in Transaction Value</div>
+                    <div class="company">Strategic & Financial Buyers</div>
+                    <p><strong>Spansion-Cypress "Merger of Equals" ($4.0B)</strong> | <strong>KKR acquisition of Optiv ($2.0B)</strong> | <strong>Vista Equity acquisitions of Marketo ($1.8B) and Cvent ($1.7B)</strong> | inContact sale to NICE ($940M)</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Capital Markets & IPOs</h4>
+                    <div class="role">Public Offerings & Growth Capital</div>
+                    <div class="company">Technology IPOs & Follow-ons</div>
+                    <p><strong>Snapchat IPO ($3.4B) - Co-Manager</strong> | <strong>Groupon IPO ($700M) - Co-Manager</strong> | SailPoint IPO ($240M) - Bookrunner | Atlassian IPO ($462M) - Bookrunner | Plus follow-on offerings for Criteo, Dropbox</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Growth & Expansion Transactions</h4>
+                    <div class="role">Private Equity & Strategic Sales</div>
+                    <div class="company">Middle Market Technology</div>
+                    <p>Ex Libris sale to ProQuest ($525M) | CSID sale to Experian ($365M) | Blackstone recapitalization of Accuvant ($195M) | Plus numerous growth-stage transactions across SaaS, cybersecurity, and enterprise software</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Emerging Technology Deals</h4>
+                    <div class="role">Innovation-Focused Transactions</div>
+                    <div class="company">High-Growth Technology</div>
+                    <p>Swarm64 sale to ServiceNow | Leanplum sale to Clevertap | Panzura sale to Profile Capital | Yantriks sale to Blue Yonder | Representative of emerging technology M&A across AI, data analytics, and cloud infrastructure</p>
+                </div>
+            </div>
+        </div>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>15+</h3>
+                    <p>Years Investment Banking</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>$10B+</h3>
+                    <p>Total Deal Value</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>50+</h3>
+                    <p>Completed Transactions</p>
+                </div>
+                <div class="stat-item fade-in">
+                    <h3>100%</h3>
+                    <p>Client-Focused Integrity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Executive Experience</h2>
+            <p class="section-subtitle">
+                Advising technology companies, private equity, and venture capital clients on complex M&A transactions, capital raises, and strategic initiatives that drive optimal outcomes.
+            </p>
+            
+            <div class="experience-grid">
+                <div class="experience-card fade-in">
+                    <h4>Director of Technology Investment Banking</h4>
+                    <div class="role">Peak Technology Partners</div>
+                    <div class="company">M&A & Capital Markets Advisory</div>
+                    <p>Partner with private company owners on M&A and capital raise transactions. Specialize in positioning companies for optimal outcomes, orchestrating competitive processes, and negotiating complex transactions. Registered Representative of Finalis Securities LLC.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Notable Transaction Experience</h4>
+                    <div class="role">Major Technology Deals</div>
+                    <div class="company">$10B+ Total Deal Value</div>
+                    <p>Led or participated in marquee transactions including Spansion-Cypress merger ($4.0B), KKR acquisition of Optiv ($2.0B), Vista acquisitions of Marketo ($1.8B) and Cvent ($1.7B), plus IPOs for SailPoint, Atlassian, and Snapchat.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Operational Technology Experience</h4>
+                    <div class="role">VC-Backed Company Leadership</div>
+                    <div class="company">Venture Capital Portfolio</div>
+                    <p>Held operational roles at two VC-backed technology companies, providing firsthand understanding of growth challenges, scaling operations, and the entrepreneur's perspective in transactions.</p>
+                </div>
+
+                <div class="experience-card fade-in">
+                    <h4>Private Technology Investor</h4>
+                    <div class="role">Expansion Stage Investments</div>
+                    <div class="company">Technology Growth Companies</div>
+                    <p>Continue to invest in expansion-stage private technology companies, maintaining deep market knowledge and relationships across the technology ecosystem while supporting portfolio company growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="board-value" class="section board-value">
+        <div class="container">
+            <h2 class="section-title">Board Value Proposition</h2>
+            <p class="section-subtitle">
+                Combining deep M&A and capital markets expertise with operational experience to help technology boards navigate complex strategic decisions and optimize shareholder value.
+            </p>
+            
+            <div class="value-grid">
+                <div class="value-card fade-in">
+                    <div class="value-icon">💼</div>
+                    <h4>M&A & Strategic Transactions</h4>
+                    <p>Deep expertise in positioning companies for optimal M&A outcomes, conducting competitive sale processes, and negotiating complex transactions that maximize shareholder value.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">📈</div>
+                    <h4>Capital Markets & Growth Financing</h4>
+                    <p>Extensive experience in capital raises, IPO processes, and growth financing strategies. Participated in marquee public offerings including Snapchat, Atlassian, and SailPoint.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🎯</div>
+                    <h4>Strategic Positioning & Valuation</h4>
+                    <p>Proven ability to position technology companies for premium valuations through strategic narrative development, competitive differentiation, and optimal timing of transactions.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h4>Stakeholder Management</h4>
+                    <p>Exceptional relationship management skills with technology companies, private equity, venture capital, and strategic acquirers across the technology ecosystem.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">⚖️</div>
+                    <h4>High-Integrity Approach</h4>
+                    <p>Commitment to straight talk and ethical business practices, building trust with all stakeholders through transparent communication and principled negotiation.</p>
+                </div>
+
+                <div class="value-card fade-in">
+                    <div class="value-icon">🔍</div>
+                    <h4>Technology Market Intelligence</h4>
+                    <p>Deep understanding of technology market dynamics, valuation trends, and strategic buyer motivations gained through 50+ completed transactions and ongoing market activity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Drive Outcomes Together</h2>
+            <p class="section-subtitle">
+                Let's discuss how strategic governance and operational expertise can accelerate your company's growth and success.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Professional Profile</h4>
+                    <a href="https://www.linkedin.com/in/andrewstivers/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <h4>Direct Contact</h4>
+                    <a href="mailto:andrew.j.stivers@gmail.com">andrew.j.stivers@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Andrew Stivers. All rights reserved. | Technology Executive & Board Leader</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
